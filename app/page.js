@@ -2,7 +2,7 @@ import Cards from "@/components/cards";
 export default function Home() {
   return (
     <main className="flex flex-col items-center justify-between py-[33px] bg-white dark:bg-gray-900">
-      <section class="bg-white dark:bg-gray-900 mb-[33px] border-[1px]">
+      <section class="bg-white dark:bg-gray-900 mb-[33px]">
         <div class="grid max-w-screen-xl px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12">
             <div class="mr-auto place-self-center lg:col-span-7">
                 <h1 class="max-w-2xl mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl dark:text-white">Hi, I'm Binta Sani. <br/> A Frontend Web Developer</h1>
@@ -20,7 +20,7 @@ export default function Home() {
             </div>                
         </div>
       </section>
-      <section className="py-8 px-6 min-h-screen  border-[1px] mb-[33px]">
+      <section className="py-8 px-6 min-h-screen mb-[33px]">
         <h2 className="text-4xl font-bold text-center">Projects</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 px-6 py-8 mx-auto">
           <Cards first="React" second="Styled-Components" third="Firebase" src="/images/project1.png" head="Crown Store" content="Crown Stores is an e-commerce website developed with React.js which offers simple authentication through Firebase and secure payment processing via Stripe. It features advanced state management powered by React-Redux, ensuring an optimal user experience. The site's design is polished and dynamic, thanks to the use of Styled-Components."/>
@@ -32,7 +32,7 @@ export default function Home() {
           <Cards first="React" second="Scss" third="TMDB Api" src="/images/project4.png" head="Movie Box" content="MovieBox is an interactive movie website created using React.js which offers users the opportunity to explore the top 10 related movies along with their in-depth details. Additionally, the platform features a search functionality to discover specific movies of interest. TMDb API was incorporated to enhance the design and user experience, I utilized SCSS for styling and customization."/>
         </div>
       </section>
-      <section class=" bg-white dark:bg-gray-900 border-[1px] mb-[33px]">
+      <section class=" bg-white dark:bg-gray-900 mb-[33px]">
         <div class="gap-8 items-center py-8 px-4 mx-auto max-w-screen-xl xl:gap-16 md:grid md:grid-cols-2 sm:py-16 lg:px-6">
             <img class="w-full dark:hidden" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/cta/cta-dashboard-mockup.svg" alt="dashboard image"/>
             <img class="w-full hidden dark:block rounded-full h-[600px] " src="/images/aboutimg.jpg" alt="dashboard image"/>
@@ -43,7 +43,7 @@ export default function Home() {
             </div>
         </div>
       </section>
-      <section class="bg-white dark:bg-gray-900 border-[1px]">
+      <section class="bg-white dark:bg-gray-900">
         <div class="container px-6 py-12 mx-auto">
             <div class="lg:flex lg:items-center lg:-mx-6">
                 <div class="lg:w-1/2 lg:mx-6">
