@@ -1,6 +1,7 @@
 'use client'
-import { useRef, useEffect } from "react";
+import { useRef } from "react";
 import Cards from "@/components/cards";
+import Image from 'next/image';
 import emailjs from '@emailjs/browser';
 import {motion} from 'framer-motion';
 import {InView} from 'react-intersection-observer';
@@ -40,7 +41,8 @@ export default function Home() {
                 </motion.a> 
             </motion.div>
             <div class="hidden lg:mt-0 lg:col-span-5 lg:flex">
-                <img src="/images/hero.png" alt="mockup" className=""/>
+                {/* <img src="/images/hero.png" alt="mockup" className=""/> */}
+                <Image src="/images/hero.png" width={3888} height={3888} alt='mockup'/>
             </div>                
         </div>
       </section>
