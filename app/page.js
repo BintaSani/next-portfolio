@@ -1,7 +1,12 @@
 'use client'
-import { useRef } from "react";
+import { useRef, useEffect } from "react";
 import Cards from "@/components/cards";
 import emailjs from '@emailjs/browser';
+import {motion} from 'framer-motion';
+import {InView} from 'react-intersection-observer';
+
+
+
 export default function Home() {
     const form = useRef();
     
@@ -18,26 +23,39 @@ export default function Home() {
           });
       };
   return (
-    <main className="flex flex-col items-center justify-between py-5 bg-white dark:bg-gray-900">
-      <section id="hero" class="bg-white dark:bg-gray-900 mb-8">
+    <main className="scroll-smooth flex flex-col items-center justify-between py-5 bg-white dark:bg-gray-900">
+      <InView>
+      {({ inView, ref }) => (
+      <section id="hero" class="bg-white dark:bg-gray-900 mb-9">
         <div class="grid max-w-screen-xl px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12">
-            <div class="mr-auto place-self-center lg:col-span-7">
+            <motion.div initial={{ opacity: 0, x: -50 }} 
+            animate={inView ? { opacity: 1, x: 0 } : {}}
+            transition={{ duration: 1 }} class="mr-auto place-self-center lg:col-span-7">
                 <h1 class="max-w-2xl mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl dark:text-white">Hi, I'm Binta Sani. <br/> A Frontend Web Developer</h1>
                 <p class="max-w-2xl mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400">I am a goal-driven individual with a creative mindset and passion for learning and innovating. I also love baking and Photography.</p>
-                <a href="mailto:bintasani992@gmail.com?subject=subject&body=body" class="inline-flex items-center justify-center px-5 py-3 mr-3 text-base font-medium text-center text-white rounded-lg bg-gray-700 hover:bg-gray-800 focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-900">
+                <motion.a  whileTap={{ scale: 0.8 }} href="mailto:bintasani992@gmail.com?subject=subject&body=body" class="inline-flex items-center justify-center px-5 py-3 mr-3 text-base font-medium text-center text-white rounded-lg bg-gray-700 hover:bg-gray-800 focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-900">
                     Get in touch
                     <svg class="w-5 h-5 ml-2 -mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
-                </a>
-                <a href="https://drive.google.com/uc?export=download&id=1g3MvbQxw5PJvYRpsksMv6E0cdDhrjhwb" class="inline-flex items-center justify-center px-5 py-3 text-base font-medium text-center text-gray-900 border border-gray-300 rounded-lg hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800">
+                </motion.a>
+                <motion.a whileTap={{ scale: 0.8 }} href="https://drive.google.com/uc?export=download&id=1g3MvbQxw5PJvYRpsksMv6E0cdDhrjhwb" class="inline-flex items-center justify-center px-5 py-3 text-base font-medium text-center text-gray-900 border border-gray-300 rounded-lg hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800">
                     Download Cv
-                </a> 
-            </div>
+                </motion.a> 
+            </motion.div>
             <div class="hidden lg:mt-0 lg:col-span-5 lg:flex">
-                <img src="/images/hero.png" alt="mockup"/>
+                <motion.img  ref={ref}
+            initial={{ opacity: 0, y: 50 }} 
+            animate={inView ? { opacity: 1, y: 0 } : {}}
+            transition={{ type: 'spring', stiffness: 200, damping: 20 }} src="/images/hero.png" alt="mockup" className=""/>
             </div>                
         </div>
       </section>
-      <section id="projects" className="py-8 px-6 min-h-screen mb-[33px] lg:mx-[119px]">
+      )}
+      </InView>
+      <InView>
+      {({ inView, ref }) => (
+      <motion.section  ref={ref}
+      initial={{ opacity: 0 }}
+      animate={inView ? { opacity: 1 } : {}} id="projects" className="py-8 px-6 min-h-screen mb-[33px] lg:mx-[119px]">
         <h2 className="text-4xl font-bold text-white text-center">Projects</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 px-6 py-8 mx-auto">
           <Cards view="https://crownstores.netlify.app/" first="React" second="Styled-Components" third="Firebase" src="/images/project1.png" head="Crown Store" content="Crown Stores is an e-commerce website developed with React.js which offers simple authentication through Firebase and secure payment processing via Stripe."/>
@@ -45,21 +63,45 @@ export default function Home() {
           <Cards view="https://hng-task3.netlify.app/" first="React" second="Firebase" third="SCSS" src="/images/project3.png" head="Image Gallery" content="Image Gallery is a user-friendly image gallery where images can be rearranged simply by dragging and dropping images in the desired position."/>
           <Cards view="https://moviesitetask.netlify.app/" first="React" second="Scss" third="TMDB Api" src="/images/project4.png" head="Movie Box" content="MovieBox is an interactive movie website which offers users the opportunity to explore the top 10 rated movies along with a search functionality to discover specific movies of interest."/>
         </div>
-      </section>
-      <section id="about" class=" bg-white dark:bg-gray-900 mb-[33px]">
+      </motion.section>
+      )}
+      </InView>
+      <InView>
+      {({ inView, ref }) => (
+      <motion.section ref={ref}
+      initial={{ opacity: 0 }}
+      animate={inView ? { opacity: 1 } : {}} id="about" class=" bg-white dark:bg-gray-900 mb-[33px]">
         <div class=" items-center py-8 px-4 mx-auto max-w-screen-xl md:grid md:grid-cols-2 sm:py-16 lg:px-6">
-            <img class="w-[424px] rounded-full h-[588px] shadow-2xl " src="/images/beautiful_african_developer_anime_style_woman_oper-removebg-preview.png" alt="dashboard image"/>
-            <div class="mt-4 md:mt-0">
+            <motion.img ref={ref}
+            initial={{ opacity: 0, y: 50 }}
+            animate={inView ? { opacity: 1, y: 0 } : {}} 
+            transition={{ type: 'spring', stiffness: 200, damping: 20, delay: inView ? 0.5 : 0  }}
+            class="w-[424px] rounded-full h-[588px] shadow-2xl " src="/images/beautiful_african_developer_anime_style_woman_oper-removebg-preview.png" alt="dashboard image"/>
+            <motion.div 
+            initial={{ opacity: 0, x: -50 }}
+            animate={inView ? { opacity: 1, x: 0 } : {}} 
+            transition={{ duration: 0.5, delay: inView ? 0.5 : 0  }} 
+            class="mt-4 md:mt-0">
                 <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">About Me</h2>
                 <p class="mb-6 font-light text-gray-500 md:text-lg dark:text-gray-400">Greetings! I'm Binta Sani, a passionate Frontend developer who thrives on hard work and dedication. My days are often filled with writing impressive React apps. When I'm not engrossed in coding, you'll find me researching the latest industry trends or baking.</p>
                 
-            </div>
+            </motion.div>
         </div>
-      </section>
-      <section id="contact" class="bg-white dark:bg-gray-900">
+      </motion.section>
+      )}
+      </InView>
+      <InView>
+      {({ inView, ref }) => (
+      <motion.section ref={ref}
+      initial={{ opacity: 0 }}
+      animate={inView ? { opacity: 1 } : {}} id="contact" class="bg-white dark:bg-gray-900">
         <div class="container px-6 py-12 mx-auto">
             <div class="lg:flex lg:items-center lg:-mx-6">
-                <div class="lg:w-1/2 lg:mx-6">
+                <motion.div 
+                initial={{ opacity: 0, x: -50 }}
+                animate={inView ? { opacity: 1, x: 0 } : {}} 
+                transition={{ duration: 0.5, delay: inView ? 0.5 : 0  }} 
+                class="lg:w-1/2 lg:mx-6">
                     <h1 class="text-2xl font-semibold text-gray-800 capitalize dark:text-white lg:text-3xl">
                         Contact Details
                     </h1>
@@ -114,9 +156,14 @@ export default function Home() {
                             </a>
                         </div>
                     </div>
-                </div>
+                </motion.div>
 
-                <div class="mt-8 lg:w-1/2 lg:mx-6">
+                <motion.div 
+                ref={ref}
+                initial={{ opacity: 0, y: 50 }}
+                animate={inView ? { opacity: 1, y: 0 } : {}} 
+                transition={{ type: 'spring', stiffness: 200, damping: 20, delay: inView ? 0.5 : 0  }}
+                class="mt-8 lg:w-1/2 lg:mx-6">
                     <div
                         class="w-full px-8 py-10 mx-auto overflow-hidden bg-white rounded-lg shadow-2xl dark:bg-gray-900 lg:max-w-xl shadow-gray-300/50 dark:shadow-black/50">
                         <h1 class="text-lg font-medium text-gray-700">Contact Form</h1>
@@ -137,15 +184,17 @@ export default function Home() {
                                 <textarea name='message' class="block w-full h-32 px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-md md:h-48 dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:ring-gray-100 dark:focus:ring-gray-800 focus:outline-none focus:ring " placeholder="Message" required></textarea>
                             </div>
 
-                            <button type="submit" class="w-full px-6 py-3 mt-6 text-sm font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-gray-700 hover:bg-gray-800 rounded-md focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-50">
+                            <motion.button whileTap={{ scale: 0.8 }} type="submit" class="w-full px-6 py-3 mt-6 text-sm font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-gray-700 hover:bg-gray-800 rounded-md focus:outline-none focus:ring focus:ring-gray-100 dark:focus:ring-gray-700 ">
                                 get in touch
-                            </button>
+                            </motion.button>
                         </form>
                     </div>
-                </div>
+                </motion.div>
             </div>
         </div>
-      </section>
+      </motion.section>
+      )}
+      </InView>
     </main>
   )
 }
