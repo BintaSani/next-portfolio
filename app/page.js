@@ -27,7 +27,7 @@ export default function Home() {
       <InView>
       {({ inView, ref }) => (
       <section id="hero" class="bg-white dark:bg-gray-900 mb-9">
-        <div class="grid max-w-screen-xl px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12">
+        <motion.div ref={ref} class="grid max-w-screen-xl px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12">
             <motion.div initial={{ opacity: 0, x: -50 }} 
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 1 }} class="mr-auto place-self-center lg:col-span-7">
@@ -42,12 +42,12 @@ export default function Home() {
                 </motion.a> 
             </motion.div>
             <div class="hidden lg:mt-0 lg:col-span-5 lg:flex">
-                <motion.img  ref={ref}
-            initial={{ opacity: 0, y: 50 }} 
-            animate={inView ? { opacity: 1, y: 0 } : {}}
-            transition={{ type: 'spring', stiffness: 200, damping: 20 }} src="/images/hero.png" alt="mockup" className=""/>
+                <motion.img  
+            initial={{ opacity: 0, y: 50 }}
+            animate={inView ? { opacity: 1, y: 0 } : {}} 
+            transition={{ type: 'spring', stiffness: 200, damping: 20, delay: inView ? 0 : 0  }} src="/images/hero.png" alt="mockup" className=""/>
             </div>                
-        </div>
+        </motion.div>
       </section>
       )}
       </InView>
