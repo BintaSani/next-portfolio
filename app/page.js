@@ -28,7 +28,7 @@ export default function Home() {
         <div class="grid max-w-screen-xl px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12">
             <motion.div initial={{ opacity: 0, x: -50 }} 
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 1 }} class="mr-auto place-self-center lg:col-span-7">
+            transition={{ duration: 0.5 }} class="mr-auto place-self-center lg:col-span-7">
                 <h1 class="max-w-2xl mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl dark:text-white">Hi, I'm Binta Sani. <br/> A Frontend Web Developer</h1>
                 <p class="max-w-2xl mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400">I am a goal-driven individual with a creative mindset and passion for learning and innovating. I also love baking and Photography.</p>
                 <motion.a  whileTap={{ scale: 0.8 }} href="mailto:bintasani992@gmail.com?subject=subject&body=body" class="inline-flex items-center justify-center px-5 py-3 mr-3 text-base font-medium text-center text-white rounded-lg bg-gray-700 hover:bg-gray-800 focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-900">
