@@ -42,10 +42,7 @@ export default function Home() {
                 </motion.a> 
             </motion.div>
             <div class="hidden lg:mt-0 lg:col-span-5 lg:flex">
-                <motion.img  
-            initial={{ opacity: 0, y: 50 }}
-            animate={inView ? { opacity: 1, y: 0 } : {}} 
-            transition={{ type: 'spring', stiffness: 200, damping: 20, delay: inView ? 0 : 0  }} src="/images/hero.png" alt="mockup" className=""/>
+                <img src="/images/hero.png" alt="mockup" className=""/>
             </div>                
         </motion.div>
       </section>
