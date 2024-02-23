@@ -1,0 +1,16 @@
+import React from 'react';
+import Image from 'next/image';
+
+export default function Loader() {
+  return (
+    <div className="flex justify-center items-center h-[85vh] bg-white dark:bg-gray-900">
+      <Image
+        src='/images/white.svg'
+        alt='loader'
+        width={100}
+        height={100}
+        className="animate-ping"
+      />
+    </div>
+  )
+}

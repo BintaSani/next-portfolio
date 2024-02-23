@@ -1,15 +1,26 @@
 'use client'
-import { useRef} from "react";
+import { useRef, useEffect, useState} from "react";
 import Cards from "@/components/cards";
 import emailjs from '@emailjs/browser';
 import {motion} from 'framer-motion';
 import {InView} from 'react-intersection-observer';
+import Loader from "@/components/loader";
+
 
 
 
 export default function Home() {
     const form = useRef();
-    
+    const [loading, setLoading] = useState(true);
+    // const [animateHero, setAnimateHero] = useState(false);
+
+    useEffect(() => {
+        // setTimeout(() => {
+            setLoading(false);
+            // setAnimateHero(true); // Trigger hero animation after loading
+        // }, 2000);
+    }, []);
+
     const sendEmail = (e) => {
         e.preventDefault();
     
@@ -22,13 +33,20 @@ export default function Home() {
               console.log(error.text);
           });
       };
+
+
   return (
+    // <>
+    //  {loading ? <Loader /> :
+   
     <main className="scroll-smooth flex flex-col items-center justify-between py-5 bg-white dark:bg-gray-900">
-      <section id="hero" class="bg-white dark:bg-gray-900 mb-9">
+       {loading ? <Loader /> : null}
+      <section id="hero" class="bg-white dark:bg-gray-900 mb-9" style={{display: loading ? 'none' : 'block'}}>
         <div class="grid max-w-screen-xl px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12">
+            
             <motion.div initial={{ opacity: 0, x: -50 }} 
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5 }} class="mr-auto place-self-center lg:col-span-7">
+            transition={{ duration: 1 }} class="mr-auto place-self-center lg:col-span-7">
                 <h1 class="max-w-2xl mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl dark:text-white">Hi, I'm Binta Sani. <br/> A Frontend Web Developer</h1>
                 <p class="max-w-2xl mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400">I am a goal-driven individual with a creative mindset and passion for learning and innovating. I also love baking and Photography.</p>
                 <motion.a  whileTap={{ scale: 0.8 }} href="mailto:bintasani992@gmail.com?subject=subject&body=body" class="inline-flex items-center justify-center px-5 py-3 mr-3 text-base font-medium text-center text-white rounded-lg bg-gray-700 hover:bg-gray-800 focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-900">
@@ -48,6 +66,7 @@ export default function Home() {
       {({ inView, ref }) => (
       <motion.section  ref={ref}
       initial={{ opacity: 0 }}
+      style={{display: loading ? 'none' : 'block'}}
       animate={inView ? { opacity: 1 } : {}} id="projects" className="py-8 px-6 min-h-screen mb-[33px] lg:mx-[119px]">
         <h2 className="text-4xl font-bold text-white text-center">Projects</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 px-6 py-8 mx-auto">
@@ -63,6 +82,7 @@ export default function Home() {
       {({ inView, ref }) => (
       <motion.section ref={ref}
       initial={{ opacity: 0 }}
+      style={{display: loading ? 'none' : 'block'}}
       animate={inView ? { opacity: 1 } : {}} id="about" class=" bg-white dark:bg-gray-900 mb-[33px]">
         <div class=" items-center py-8 px-4 mx-auto max-w-screen-xl md:grid md:grid-cols-2 sm:py-16 lg:px-6">
             <motion.img ref={ref}
@@ -86,6 +106,7 @@ export default function Home() {
       <InView>
       {({ inView, ref }) => (
       <motion.section ref={ref}
+      style={{display: loading ? 'none' : 'block'}}
       initial={{ opacity: 0 }}
       animate={inView ? { opacity: 1 } : {}} id="contact" class="bg-white dark:bg-gray-900">
         <div class="container px-6 py-12 mx-auto">
@@ -188,6 +209,10 @@ export default function Home() {
       </motion.section>
       )}
       </InView>
+        
     </main>
+    // }
+   
+    // </>
   )
 }
