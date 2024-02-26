@@ -50,9 +50,9 @@ function header() {
                             <svg class="hidden w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
                         </button>
                         {isOpen && (<div className='absolute z-50 right-4 p-3 top-20 shadow-md w-40 bg-primary-700 rounded'>
-                            <div class="block py-2 flex justify-center items-center pr-4 pl-3 text-white rounded bg-primary-700 dark:text-gray-400 hover:text-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600 dark:hover:text-white"><a href="#projects">Projects</a></div>
-                            <div class="block py-2 flex justify-center items-center pr-4 pl-3 text-white rounded bg-primary-700 dark:text-gray-400 hover:text-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600 dark:hover:text-white"><a href="#about">About Me</a></div>
-                            <div class="block py-2 flex justify-center items-center pr-4 pl-3 text-white rounded bg-primary-700 dark:text-gray-400 hover:text-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600 dark:hover:text-white"><a href="#contact">Contact</a></div>
+                            <div class="py-2 flex justify-center items-center pr-4 pl-3 text-white rounded bg-primary-700 dark:text-gray-400 hover:text-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600 dark:hover:text-white"><a href="#projects">Projects</a></div>
+                            <div class="py-2 flex justify-center items-center pr-4 pl-3 text-white rounded bg-primary-700 dark:text-gray-400 hover:text-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600 dark:hover:text-white"><a href="#about">About Me</a></div>
+                            <div class="py-2 flex justify-center items-center pr-4 pl-3 text-white rounded bg-primary-700 dark:text-gray-400 hover:text-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600 dark:hover:text-white"><a href="#contact">Contact</a></div>
                         </div>)}
                     </div>
                     <div class="hidden justify-between items-center w-full lg:flex lg:w-auto lg:order-1" id="mobile-menu-2">
