@@ -58,7 +58,7 @@ export default function Home() {
                 </motion.a> 
             </motion.div>
             <div class="hidden lg:mt-0 lg:col-span-5 lg:flex">
-                <img src="/images/hero.png" alt="mockup" className=""/>
+                <img src="/images/hero.webp" alt="mockup" className=""/>
             </div>                
         </div>
       </section>
@@ -89,7 +89,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 50 }}
             animate={inView ? { opacity: 1, y: 0 } : {}} 
             transition={{ type: 'spring', stiffness: 200, damping: 20, delay: inView ? 0.5 : 0  }}
-            class="w-[424px] rounded-full h-[588px] shadow-2xl " src="/images/beautiful_african_developer_anime_style_woman_oper-removebg-preview.png" alt="dashboard image"/>
+            class="w-[424px] rounded-full h-[588px] shadow-2xl " src="/images/beautiful_african_developer_anime_style_woman_oper-removebg-preview.webp" alt="dashboard image"/>
             <motion.div 
             initial={{ opacity: 0, x: -50 }}
             animate={inView ? { opacity: 1, x: 0 } : {}} 

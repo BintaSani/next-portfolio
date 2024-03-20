@@ -7,8 +7,8 @@ export default function Loader() {
       <Image
         src='/images/white.svg'
         alt='loader'
-        width={100}
-        height={100}
+        width={50}
+        height={50}
         className="animate-ping"
       />
     </div>
