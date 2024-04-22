@@ -53,7 +53,7 @@ export default function Home() {
                     Get in touch
                     <svg class="w-5 h-5 ml-2 -mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
                 </motion.a>
-                <motion.a whileTap={{ scale: 0.8 }} href="https://drive.google.com/uc?export=download&id=1BV9455hIuXgQHAPI37nj0QrMpmMyY4b0" class="inline-flex items-center justify-center px-5 py-3 text-base font-medium text-center text-gray-900 border border-gray-300 rounded-lg hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800">
+                <motion.a whileTap={{ scale: 0.8 }} href="https://drive.google.com/uc?export=download&id=1CncKiVQmg5FvHq2Prv3xKpAjKW47ReU6" class="inline-flex items-center justify-center px-5 py-3 text-base font-medium text-center text-gray-900 border border-gray-300 rounded-lg hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800">
                     Download Cv
                 </motion.a> 
             </motion.div>
@@ -72,9 +72,9 @@ export default function Home() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 px-6 py-8 mx-auto">
           <Cards view="https://bills-pi.vercel.app/" first="Next.js" second="Tailwind css" third="PWA" src="/images/bills.webp" head="Bills" content="Bills is an all round bill payment progressive web app (PWA) built with Next.js where all utility bills and phone bills are processed through Paga."/>
           <Cards view="https://bills-admin.vercel.app/" first="Next.js" second="Tailwind css" third="Chart.js" src="/images/bills-admin.webp" head="BillEase+" content="BillEase+ is an Administration management platform built with Next.js where the data for Bills PWA is collected, sorted and stored and displayed."/>
-          <Cards view="https://crownstores.netlify.app/" first="React" second="Styled-Components" third="Firebase" src="/images/project1.webp" head="Crown Store" content="Crown Stores is a modern e-commerce website built with React.js which offers simple authentication wth Firebase and secure payment processing via Stripe."/>
+          <Cards view="https://crownstores.vercel.app/" first="React" second="Styled-Components" third="Firebase" src="/images/project1.webp" head="Crown Store" content="Crown Stores is a modern e-commerce website built with React.js which offers simple authentication wth Firebase and secure payment processing via Stripe."/>
           <Cards view="https://bintasani.github.io/weatherapp/weather%20site/weatherHtml" first="Javascript" second="HTML" third="CSS" src="/images/project2.webp" head="Weather" content="Weather provides detailed weather information for the current day and the next four days, including wind speed, pressure, humidity, etc for locations worldwide."/>
-          <Cards view="https://hng-task3.netlify.app/" first="React.js" second="Firebase" third="SCSS" src="/images/project3.webp" head="Image Gallery" content="Image Gallery is a user-friendly image gallery where images can be rearranged simply by dragging and dropping images in the desired position."/>
+          <Cards view="https://imagesort.netlify.app/" first="React.js" second="Firebase" third="SCSS" src="/images/project3.webp" head="Image Gallery" content="Image Sort is a user-friendly image gallery where images can be rearranged simply by dragging and dropping images in the desired position."/>
           <Cards view="https://moviesitetask.netlify.app/" first="React.js" second="Scss" third="TMDB Api" src="/images/project4.webp" head="Movie Box" content="MovieBox is an interactive movie website which offers users the opportunity to explore top rated movies and a search functionality to discover specific movies of interest."/>
         </div>
       </motion.section>
