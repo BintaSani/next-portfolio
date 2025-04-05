@@ -41,7 +41,7 @@ export default function Home() {
    
     <main className="scroll-smooth flex flex-col items-center justify-between py-5 bg-white dark:bg-gray-900">
        {loading ? <Loader /> : null}
-      <section id="hero" class="bg-white dark:bg-gray-900 mb-9" style={{display: loading ? 'none' : 'block'}}>
+      <section id="hero" class="bg-white dark:bg-gray-900 mb-9 xl:h-[90vh] " style={{display: loading ? 'none' : 'flex'}}>
         <div class="grid max-w-screen-xl px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12">
             
             <motion.div initial={{ opacity: 0, x: -50 }} 
@@ -84,8 +84,8 @@ export default function Home() {
       {({ inView, ref }) => (
       <motion.section ref={ref}
       initial={{ opacity: 0 }}
-      style={{display: loading ? 'none' : 'block'}}
-      animate={inView ? { opacity: 1 } : {}} id="about" class=" bg-white dark:bg-gray-900 mb-[33px]">
+      style={{display: loading ? 'none' : 'flex'}}
+      animate={inView ? { opacity: 1 } : {}} id="about" class=" bg-white dark:bg-gray-900 mb-[33px] lg:h-screen items-center">
         <div class=" items-center py-8 px-4 mx-auto max-w-screen-xl md:grid md:grid-cols-2 sm:py-16 lg:px-6">
             <motion.img ref={ref}
             initial={{ opacity: 0, y: 50 }}
@@ -108,10 +108,10 @@ export default function Home() {
       <InView>
       {({ inView, ref }) => (
       <motion.section ref={ref}
-      style={{display: loading ? 'none' : 'block'}}
+      style={{display: loading ? 'none' : 'flex'}}
       initial={{ opacity: 0 }}
-      animate={inView ? { opacity: 1 } : {}} id="contact" class="bg-white dark:bg-gray-900">
-        <div class="container px-6 py-12 mx-auto">
+      animate={inView ? { opacity: 1 } : {}} id="contact" class="bg-white dark:bg-gray-900 xl:h-screen lg:items-center">
+        <div class="container px-6 py-12 2xl:py-0 mx-auto">
             <div class="lg:flex lg:items-center lg:-mx-6">
                 <motion.div 
                 initial={{ opacity: 0, x: -50 }}
