@@ -45,7 +45,7 @@ export default function Home() {
     // <>
     //  {loading ? <Loader /> :
 
-    <main className="scroll-smooth flex flex-col items-center justify-between py-5 bg-white dark:bg-gray-900">
+    <main className="scroll-smooth flex flex-col items-center overflow-x-hidden justify-between py-5 bg-white dark:bg-gray-900">
       {loading ? (
         <Loader />
       ) : (
@@ -121,7 +121,7 @@ export default function Home() {
                 <h2 className="text-4xl font-bold text-white text-center">
                   Projects
                 </h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 px-6 py-8 mx-auto">
+                <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 items-stretch gap-4 px-6 py-8 mx-auto">
                   <Cards
                     view="https://bills-pi.vercel.app/"
                     first="Next.js"
@@ -209,7 +209,7 @@ export default function Home() {
                     initial={{ opacity: 0, x: -50 }}
                     animate={inView ? { opacity: 1, x: 0 } : {}}
                     transition={{ duration: 0.5, delay: inView ? 0.5 : 0 }}
-                    class="mt-4 md:mt-0"
+                    class="mt-4 md:ml-2 lg:ml-0 md:mt-0"
                   >
                     <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">
                       About Me

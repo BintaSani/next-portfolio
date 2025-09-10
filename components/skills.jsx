@@ -25,7 +25,7 @@ const Skills = () => {
           gradientColor={darkMode ? "#111827" : "#FFFFFF"}
           speed={100}
         >
-          <div className="flex items-center md:gap-40 gap-10 pl-10 md:pl-40 ">
+          <div className="flex items-center md:gap-40 gap-16 pl-10 md:pl-40 ">
             <IoLogoJavascript className="size-16 text-gray-500 dark:text-gray-400" />
             <SiTypescript className="size-16 text-gray-500 dark:text-gray-400" />
             <FaReact className="size-16 text-gray-500 dark:text-gray-400" />
