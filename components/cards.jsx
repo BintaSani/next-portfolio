@@ -2,7 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { InView } from "react-intersection-observer";
 
-function cards({ src, head, content, first, second, third, view }) {
+function cards({ src, head, content, first, second, third, fourth, view }) {
   return (
     <InView>
       {({ inView, ref }) => (
@@ -39,6 +39,11 @@ function cards({ src, head, content, first, second, third, view }) {
                 <span className="inline-block bg-gray-700 rounded-full px-3 py-1 text-sm font-semibold text-gray-200 mr-2 mb-2">
                   {third}
                 </span>
+                {fourth ? (
+                  <span className="inline-block bg-gray-700 rounded-full px-3 py-1 text-sm font-semibold text-gray-200 mr-2 mb-2">
+                    {fourth}
+                  </span>
+                ) : null}
               </div>
             </motion.div>
           </a>

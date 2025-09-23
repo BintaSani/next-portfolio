@@ -123,13 +123,14 @@ export default function Home() {
                 </h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 items-stretch gap-4 px-6 py-8 mx-auto">
                   <Cards
-                    view="https://bills-pi.vercel.app/"
+                    view="https://app.movnn.com/"
                     first="Next.js"
                     second="Tailwind css"
-                    third="PWA"
-                    src="/images/bills.webp"
-                    head="Bills"
-                    content="Bills is an all round bill payment progressive web app (PWA) built with Next.js where all utility bills and phone bills are processed through Paga."
+                    third="Rest API"
+                    src="/images/movnn.webp"
+                    head="Movnn"
+                    // content="Movnn is a SaaS platform that provides a comprehensive solution for managing and optimizing business operations, enhancing productivity, and driving growth."
+                    content="A SaaS platform that enables businesses to manage inventory, automate order fulfillment, and track deliveries in real-time, enhancing productivity, and driving growth."
                   />
                   <Cards
                     view="https://bills-admin.vercel.app/"
@@ -154,6 +155,7 @@ export default function Home() {
                     first="Javascript"
                     second="HTML"
                     third="CSS"
+                    fourth="Rest API"
                     src="/images/project2.webp"
                     head="Weather"
                     content="Weather provides detailed weather information for the current day and the next four days, including wind speed, pressure, humidity, etc for locations worldwide."
@@ -168,13 +170,13 @@ export default function Home() {
                     content="Image Sort is a user-friendly image gallery where images can be rearranged simply by dragging and dropping images in the desired position."
                   />
                   <Cards
-                    view="https://moviesitetask.netlify.app/"
-                    first="React.js"
-                    second="Scss"
-                    third="TMDB Api"
-                    src="/images/project4.webp"
-                    head="Movie Box"
-                    content="MovieBox is an interactive movie website which offers users the opportunity to explore top rated movies and a search functionality to discover specific movies of interest."
+                    view="https://trimpa-flights.vercel.app/"
+                    first="Next.js"
+                    second="Tailwind CSS"
+                    third="Firebase"
+                    src="/images/trimpa.webp"
+                    head="Trimpa"
+                    content="Trimpa is a sleek travel booking platform for flights, hotels, and packages, featuring deal highlights, promotions, and user reviews."
                   />
                 </div>
               </motion.section>

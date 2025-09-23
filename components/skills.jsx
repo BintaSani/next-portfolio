@@ -8,7 +8,7 @@ import {
   SiNodedotjs,
   SiShadcnui,
 } from "react-icons/si";
-import { RiTailwindCssFill } from "react-icons/ri";
+import { RiTailwindCssFill, RiFirebaseFill } from "react-icons/ri";
 import { FaReact, FaCss3Alt } from "react-icons/fa";
 import { ImGithub } from "react-icons/im";
 import { TbApi } from "react-icons/tb";
@@ -36,6 +36,7 @@ const Skills = () => {
             <ImGithub className="size-16 text-gray-500 dark:text-gray-400" />
             <SiNodedotjs className="size-16 text-gray-500 dark:text-gray-400" />
             <SiShadcnui className="size-16 text-gray-500 dark:text-gray-400" />
+            <RiFirebaseFill className="size-16 text-gray-500 dark:text-gray-400" />
           </div>
         </Marquee>
       </div>
