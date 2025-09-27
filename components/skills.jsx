@@ -8,8 +8,9 @@ import {
   SiNodedotjs,
   SiShadcnui,
 } from "react-icons/si";
-import { RiTailwindCssFill, RiFirebaseFill } from "react-icons/ri";
-import { FaReact, FaCss3Alt } from "react-icons/fa";
+import { RiTailwindCssFill, RiFirebaseFill, RiHtml5Fill } from "react-icons/ri";
+import { BsFiletypeScss } from "react-icons/bs";
+import { FaReact, FaCss3Alt, FaGitAlt } from "react-icons/fa";
 import { ImGithub } from "react-icons/im";
 import { TbApi } from "react-icons/tb";
 import { useTheme } from "@/context/themeContext";
@@ -34,9 +35,12 @@ const Skills = () => {
             <FaCss3Alt className="size-16 text-gray-500 dark:text-gray-400" />
             <TbApi className="size-16 text-gray-500 dark:text-gray-400" />
             <ImGithub className="size-16 text-gray-500 dark:text-gray-400" />
+            <RiHtml5Fill className="size-16 text-gray-500 dark:text-gray-400" />
             <SiNodedotjs className="size-16 text-gray-500 dark:text-gray-400" />
             <SiShadcnui className="size-16 text-gray-500 dark:text-gray-400" />
+            <FaGitAlt className="size-16 text-gray-500 dark:text-gray-400" />
             <RiFirebaseFill className="size-16 text-gray-500 dark:text-gray-400" />
+            <BsFiletypeScss className="size-16 text-gray-500 dark:text-gray-400" />
           </div>
         </Marquee>
       </div>

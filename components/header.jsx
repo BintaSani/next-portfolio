@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSun, faMoon } from "@fortawesome/free-solid-svg-icons";
 import { useTheme } from "@/context/themeContext";
@@ -7,15 +7,33 @@ import { useTheme } from "@/context/themeContext";
 function Header() {
   const { darkMode, toggleTheme } = useTheme();
   const [isOpen, setIsOpen] = useState(false);
+  const [isFixed, setIsFixed] = useState(false);
 
   const show = () => {
     setIsOpen(!isOpen);
   };
 
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 5) {
+        setIsFixed(true);
+      } else {
+        setIsFixed(false);
+      }
+    };
+    window.addEventListener("scroll", handleScroll);
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <div>
+    <div
+      className={`${
+        isFixed ? "fixed top-0 backdrop-blur-md" : "relative"
+      } w-full z-50  transition-transform duration-300 shadow-md dark:shadow-sm dark:shadow-gray-400`}
+    >
       <header>
-        <nav className="bg-white px-4 lg:px-6 pb-2.5 dark:bg-gray-900 pt-7">
+        <nav className="bg-white  px-4 md:px-6 lg:px-10 pb-2.5 dark:bg-gray-900 pt-7">
           <div className="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
             <a href="/" className="flex items-center">
               <img
